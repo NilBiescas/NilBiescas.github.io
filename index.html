@@ -90,27 +90,20 @@
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-<tr onmouseout="layout_stop()" onmouseover="layout_start()" bgcolor="#f0f0f0">
+<tr bgcolor="#f0f0f0">
   <td style="padding:16px;width:20%;vertical-align:middle">
     <div class="one">
-      <div class="two" id='layout_image'><video width=100% muted autoplay loop>
-        <source src="data/Recording 2025-09-03 003520.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video></div>
-      <img src='data/Large Language Model (LLM)lm.png' width="160">
+      <div class="two">
+        <video width="100%" muted autoplay loop playsinline>
+          <source src="data/Recording-2025-09-03-003520.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <img src="data/Large Language Model (LLM)lm.png" width="160" alt="AnyCam-3D teaser">
     </div>
-    <script type="text/javascript">
-      function layout_start() {
-        document.getElementById('layout_image').style.opacity = "1";
-      }
-      function layout_stop() {
-        document.getElementById('layout_image').style.opacity = "0";
-      }
-      layout_stop()
-    </script>
   </td>
   <td style="padding:8px;width:80%;vertical-align:middle">
-    <a href="data/ICDAR2025_Layout_Meet_Language.pdf" target="_blank">
+    <a href="data/TUM_Thesis_for_Informatics.pdf" target="_blank">
       <span class="papertitle">AnyCam-3D: Extending AnyCam for Dense 3D Geometry Reconstruction in Dynamic, Uncalibrated Videos</span>
     </a>
     <br>
