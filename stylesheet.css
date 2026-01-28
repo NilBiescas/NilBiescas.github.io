@@ -126,16 +126,14 @@ span.highlight {
     border-radius: 10px;
 }
 .one {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
 }
 
 .one img,
-.one img { object-fit: contain; }
-.one video { object-fit: contain; } /* optional */
 .one video {
   position: absolute;
   inset: 0;
