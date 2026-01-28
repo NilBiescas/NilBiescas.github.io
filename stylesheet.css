@@ -126,11 +126,12 @@ span.highlight {
     border-radius: 10px;
 }
 .one {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+  background: #fff; /* shows letterbox when using contain */
 }
 
 .one img,
@@ -139,17 +140,17 @@ span.highlight {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
 }
 
-/* thumbnail stays visible */
-.one img { 
+/* thumbnails: show the full image (no crop) */
+.one > img {
   z-index: 1;
-  opacity: 1;
+  opacity: 1 !important;
+  object-fit: contain !important;
 }
 
-/* hover media sits above thumbnail */
+/* hover layer sits above thumbnail */
 .one .two {
   position: absolute;
   inset: 0;
@@ -159,5 +160,12 @@ span.highlight {
   pointer-events: none;
 }
 
-/* only reveal hover media for items that have it */
+/* pick ONE video behavior */
+
+/* A) video fills the box (cropped) */
+.one video { object-fit: cover; }
+
+/* B) video also shows fully (no crop) */
+/* .one video { object-fit: contain; background: #fff; } */
+
 .has-hover:hover .two { opacity: 1; }
