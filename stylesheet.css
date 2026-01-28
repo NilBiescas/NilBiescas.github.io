@@ -161,8 +161,3 @@ span.highlight {
 
 /* only reveal hover media for items that have it */
 .has-hover:hover .two { opacity: 1; }
-
-
-.one:hover .two {
-  opacity: 1;
-}
