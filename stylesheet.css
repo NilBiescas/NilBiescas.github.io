@@ -134,6 +134,8 @@ span.highlight {
 }
 
 .one img,
+.one img { object-fit: contain; }
+.one video { object-fit: contain; } /* optional */
 .one video {
   position: absolute;
   inset: 0;
