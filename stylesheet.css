@@ -163,7 +163,11 @@ span.highlight {
 /* pick ONE video behavior */
 
 /* A) video fills the box (cropped) */
-.one video { object-fit: cover; }
+.one video {
+  object-fit: contain;
+  background: #fff; /* optional, avoids black bars */
+}
+
 
 /* B) video also shows fully (no crop) */
 /* .one video { object-fit: contain; background: #fff; } */
