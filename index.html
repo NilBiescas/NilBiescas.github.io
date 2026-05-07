@@ -36,6 +36,7 @@
                 <div class="links">
                     <a href="mailto:nilbiescas3@gmail.com">Email</a>
                     <a href="data/cv_nil_2025_07.pdf" target="_blank">CV (PDF)</a>
+                    <a href="blog.html" class="blog-trigger">Blog</a>
                     <a href="https://scholar.google.com/citations?hl=en&user=gtHrYbUAAAAJ" target="_blank">Scholar</a>
                     <a href="https://twitter.com/biescss" target="_blank">Twitter</a>
                     <a href="https://github.com/NilBiescas" target="_blank">Github</a>
@@ -145,6 +146,41 @@
             </div>
         </section>
 
+        <!-- Blog Section -->
+        <section style="margin-top: 50px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--card-border); margin-bottom: 30px;">
+                <h2 style="border-bottom: none; margin-bottom: 0; padding-bottom: 12px;">Blog & Thoughts</h2>
+                <a href="blog.html" class="blog-trigger" style="font-size: 14px; font-weight: 600;">View All Posts &rarr;</a>
+            </div>
+            <div class="item-grid">
+                
+                <!-- Blog Post 1 -->
+                <div class="item-row blog-trigger-card" data-url="blog.html" style="cursor: pointer;">
+                    <div class="item-media">
+                        <img src="data/Large Language Model (LLM)lm.png" alt="Blog Post 1 Preview">
+                    </div>
+                    <div>
+                        <a href="blog.html" class="papertitle">Understanding Vision Tokenizers for 3D Environments</a>
+                        <span class="venue">May 2026</span>
+                        <p class="item-desc">A deep dive into how we can efficiently discretize 3D point clouds and voxel grids to feed them into large multimodal models for robotic navigation.</p>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="item-row blog-trigger-card" data-url="blog.html" style="cursor: pointer;">
+                    <div class="item-media">
+                        <img src="data/image (1).png" alt="Blog Post 2 Preview">
+                    </div>
+                    <div>
+                        <a href="blog.html" class="papertitle">My Journey from Barcelona to EPFL</a>
+                        <span class="venue">March 2026</span>
+                        <p class="item-desc">Reflecting on the transition from my undergraduate studies at UAB and TUM to starting my Master's in Data Science and researching at VILAB in Switzerland.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Skills Section -->
         <section style="margin-top: 50px;">
             <h2>Skills</h2>
@@ -173,8 +209,26 @@
         </footer>
     </div>
 
-    <!-- Video Hover Interaction -->
+    <!-- Blog Modal Window -->
+    <div class="modal-overlay" id="blogModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <div class="modal-title">Nil's Blog</div>
+                <div class="modal-controls">
+                    <div class="control-btn btn-minimize"></div>
+                    <div class="control-btn btn-maximize"></div>
+                    <div class="control-btn btn-close" id="closeModal"></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <iframe src="" id="blogFrame"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Hover Interaction & Modal Logic -->
     <script>
+        // Video Hover
         document.querySelectorAll(".item-row").forEach(row => {
             const v = row.querySelector("video");
             if (!v) return;
@@ -184,6 +238,50 @@
                 v.pause();
                 v.currentTime = 0;
             });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('blogModal');
+        const closeBtn = document.getElementById('closeModal');
+        const blogFrame = document.getElementById('blogFrame');
+
+        function openBlog(url) {
+            blogFrame.src = url;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeBlog() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => { blogFrame.src = ''; }, 300); // Clear iframe after transition
+        }
+
+        // Intercept links
+        document.querySelectorAll('.blog-trigger').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openBlog(link.getAttribute('href'));
+            });
+        });
+
+        // Intercept card clicks
+        document.querySelectorAll('.blog-trigger-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // If the user clicked a link inside the card, don't trigger the card action
+                if (e.target.tagName === 'A') return;
+                openBlog(card.getAttribute('data-url'));
+            });
+        });
+
+        closeBtn.addEventListener('click', closeBlog);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeBlog();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeBlog();
         });
     </script>
 </body>

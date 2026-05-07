@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Nil Biescas</title>
+    <meta name="author" content="Nil Biescas">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-header {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .back-link svg {
+            margin-right: 8px;
+        }
+        .blog-post-card {
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        .blog-post-card:hover .papertitle {
+            color: var(--primary-color);
+        }
+        .category-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="blog-header">
+            <a href="index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Home
+            </a>
+            <h1 class="name">Blog & Thoughts</h1>
+            <p>Sharing my journey in AI, robotics, and personal growth.</p>
+        </header>
+
+        <section>
+            <div class="item-grid">
+                <!-- Blog Post 1 -->
+                <article class="item-row blog-post-card">
+                    <div class="item-media">
+                        <img src="data/Large Language Model (LLM)lm.png" alt="Vision Tokenizers">
+                    </div>
+                    <div>
+                        <span class="category-tag">Research</span>
+                        <span class="papertitle">Understanding Vision Tokenizers for 3D Environments</span>
+                        <span class="venue">May 2026</span>
+                        <p class="item-desc">A deep dive into how we can efficiently discretize 3D point clouds and voxel grids to feed them into large multimodal models for robotic navigation. This post explores the trade-offs between different quantization methods and their impact on downstream task performance.</p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="item-row blog-post-card">
+                    <div class="item-media">
+                        <img src="data/image (1).png" alt="Journey to EPFL">
+                    </div>
+                    <div>
+                        <span class="category-tag">Personal</span>
+                        <span class="papertitle">My Journey from Barcelona to EPFL</span>
+                        <span class="venue">March 2026</span>
+                        <p class="item-desc">Reflecting on the transition from my undergraduate studies at UAB and TUM to starting my Master's in Data Science and researching at VILAB in Switzerland. I share some tips for prospective students and the challenges I faced during the application process.</p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 (Placeholder) -->
+                <article class="item-row blog-post-card">
+                    <div class="item-media">
+                        <img src="images/layeredDoc.gif" alt="ECCV Experience">
+                    </div>
+                    <div>
+                        <span class="category-tag">Conference</span>
+                        <span class="papertitle">Attending ECCV 2024: Key Takeaways</span>
+                        <span class="venue">October 2024</span>
+                        <p class="item-desc">Highlights from my experience at ECCV 2024, including the most interesting papers I encountered and the future directions of document understanding research.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Nil Biescas. Built with passion and Glassmorphism.</p>
+        </footer>
+    </div>
+    <!-- Script to hide header in iframe -->
+    <script>
+        if (window.self !== window.top) {
+            document.querySelector('.back-link').style.display = 'none';
+            document.body.style.background = 'transparent';
+        }
+    </script>
+</body>
+</html>
