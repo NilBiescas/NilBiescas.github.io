@@ -81,6 +81,22 @@ h1, h2, h3 {
   font-weight: 600;
   margin-top: 0;
   letter-spacing: -0.01em;
+  background: linear-gradient(
+    to right, 
+    #ff2400, #e81d1d, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8, #ff2400
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-move 5s linear infinite;
+  display: inline-block;
+}
+
+@keyframes rainbow-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 h2 {
@@ -88,7 +104,15 @@ h2 {
   border-bottom: 1px solid var(--card-border);
   padding-bottom: 12px;
   margin-bottom: 30px;
+  display: block; /* Keep h2 as block for the border-bottom */
+  width: 100%;
 }
+
+h2::after {
+  content: '';
+  display: block;
+}
+
 
 p {
   margin-bottom: 1.5em;
@@ -132,10 +156,20 @@ p {
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 16px;
-  display: block;
+  display: inline-block;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  background: linear-gradient(
+    to right, 
+    #ff2400, #e81d1d, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8, #ff2400
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-move 5s linear infinite;
 }
+
 
 .profile-photo img {
   width: 100%;
@@ -265,11 +299,21 @@ p {
 .papertitle {
   font-weight: 600;
   font-size: 18px;
-  display: block;
+  display: inline-block;
   margin-bottom: 8px;
   line-height: 1.4;
   color: var(--heading-color);
+  background: linear-gradient(
+    to right, 
+    #ff2400, #e81d1d, #e8b71d, #1de840, #1ddde8, #2b1de8, #dd1de8, #ff2400
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-move 5s linear infinite;
 }
+
 
 .authors {
   font-size: 15px;
