@@ -36,7 +36,6 @@
                 <div class="links">
                     <a href="mailto:nilbiescas3@gmail.com">Email</a>
                     <a href="data/cv_nil_2025_07.pdf" target="_blank">CV (PDF)</a>
-                    <a href="blog.html" class="blog-trigger">Blog</a>
                     <a href="https://scholar.google.com/citations?hl=en&user=gtHrYbUAAAAJ" target="_blank">Scholar</a>
                     <a href="https://twitter.com/biescss" target="_blank">Twitter</a>
                     <a href="https://github.com/NilBiescas" target="_blank">Github</a>
@@ -146,45 +145,6 @@
             </div>
         </section>
 
-        <!-- Blog Section -->
-        <section style="margin-top: 50px;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--card-border); margin-bottom: 30px;">
-                <h2 style="border-bottom: none; margin-bottom: 0; padding-bottom: 12px;">Blog & Thoughts</h2>
-                <a href="blog.html" class="blog-trigger" style="font-size: 14px; font-weight: 600;">View All Posts &rarr;</a>
-            </div>
-            <div class="item-grid">
-                
-                <!-- Placeholder Blog Post 1 -->
-                <div class="item-row blog-trigger-card" data-url="blog.html" style="cursor: pointer;">
-                    <div class="item-media">
-                        <div class="placeholder-media">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="blog.html" class="papertitle">Your First Blog Post Title</a>
-                        <span class="venue">Month Year</span>
-                        <p class="item-desc">This is a placeholder for your blog post description. Share a brief summary of your thoughts, research, or journey here.</p>
-                    </div>
-                </div>
-
-                <!-- Placeholder Blog Post 2 -->
-                <div class="item-row blog-trigger-card" data-url="blog.html" style="cursor: pointer;">
-                    <div class="item-media">
-                        <div class="placeholder-media">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="blog.html" class="papertitle">Another Interesting Thought</a>
-                        <span class="venue">Month Year</span>
-                        <p class="item-desc">Use this section to highlight recent blog updates or interesting topics you've written about lately.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
         <!-- Skills Section -->
         <section style="margin-top: 50px;">
             <h2>Skills</h2>
@@ -213,24 +173,7 @@
         </footer>
     </div>
 
-    <!-- Blog Modal Window -->
-    <div class="modal-overlay" id="blogModal">
-        <div class="modal-window">
-            <div class="modal-header">
-                <div class="modal-title">Nil's Blog</div>
-                <div class="modal-controls">
-                    <div class="control-btn btn-minimize"></div>
-                    <div class="control-btn btn-maximize"></div>
-                    <div class="control-btn btn-close" id="closeModal"></div>
-                </div>
-            </div>
-            <div class="modal-body">
-                <iframe src="" id="blogFrame"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- Video Hover Interaction & Modal Logic -->
+    <!-- Video Hover Interaction Logic -->
     <script>
         // Video Hover
         document.querySelectorAll(".item-row").forEach(row => {
@@ -242,50 +185,6 @@
                 v.pause();
                 v.currentTime = 0;
             });
-        });
-
-        // Modal Logic
-        const modal = document.getElementById('blogModal');
-        const closeBtn = document.getElementById('closeModal');
-        const blogFrame = document.getElementById('blogFrame');
-
-        function openBlog(url) {
-            blogFrame.src = url;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-
-        function closeBlog() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(() => { blogFrame.src = ''; }, 300); // Clear iframe after transition
-        }
-
-        // Intercept links
-        document.querySelectorAll('.blog-trigger').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                openBlog(link.getAttribute('href'));
-            });
-        });
-
-        // Intercept card clicks
-        document.querySelectorAll('.blog-trigger-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                // If the user clicked a link inside the card, don't trigger the card action
-                if (e.target.tagName === 'A') return;
-                openBlog(card.getAttribute('data-url'));
-            });
-        });
-
-        closeBtn.addEventListener('click', closeBlog);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeBlog();
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) closeBlog();
         });
     </script>
 </body>
