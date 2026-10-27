@@ -1,75 +1,27 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Nil Biescas</title>
-    <meta name="author" content="Nil Biescas">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .blog-header {
-            margin-bottom: 40px;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        .back-link svg {
-            margin-right: 8px;
-        }
-        .blog-post-card {
-            margin-bottom: 30px;
-            cursor: pointer;
-        }
-        .blog-post-card:hover .papertitle {
-            color: var(--primary-color);
-        }
-        .category-tag {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            display: block;
-            font-weight: 700;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Nil Biescas</title>
+  <meta name="author" content="Nil Biescas">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <header class="blog-header">
-            <a href="index.html" class="back-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Back to Home
-            </a>
-            <h1 class="name">Blog & Thoughts</h1>
-            <p>Sharing my journey in AI, robotics, and personal growth.</p>
-        </header>
-
-        <section>
-            <div class="item-grid">
-                <p style="text-align: center; margin-top: 40px; color: var(--text-color); opacity: 0.7;">
-                    New posts coming soon. Stay tuned!
-                </p>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Nil Biescas. Built with passion and Glassmorphism.</p>
-        </footer>
-    </div>
-    <!-- Script to hide header in iframe -->
-    <script>
-        if (window.self !== window.top) {
-            document.querySelector('.back-link').style.display = 'none';
-            document.body.style.background = 'transparent';
-        }
-    </script>
+  <div class="page-narrow">
+    <a href="index.html" class="back-link">← Back to home</a>
+    <h1 class="page-title">Blog &amp; Thoughts</h1>
+    <p class="page-sub">Notes on AI, robotics, and what I’m learning along the way.</p>
+    <div class="empty">New posts coming soon.</div>
+    <footer>© 2026 Nil Biescas</footer>
+  </div>
+  <script>
+    if (window.self !== window.top) {
+      document.querySelector('.back-link').style.display = 'none';
+      document.body.style.background = 'transparent';
+    }
+  </script>
 </body>
 </html>
